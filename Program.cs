@@ -21,10 +21,10 @@ namespace Knight_s_Quest
             caracter = teclas.KeyChar;
             if(char.IsWhiteSpace(caracter)) 
             {
-                valor = false;
+                valor = true;
             }
             else
-                valor = true;
+                valor = false;
 
             return valor;
         }
@@ -56,14 +56,14 @@ namespace Knight_s_Quest
                 int modulo = tiempoEspera % 2;
                 if (modulo == 0)
                 {
-                    Console.WriteLine("                              PRESIONE CUALQUIER TECLA PARA COMENZAR");
+                    Console.WriteLine("");
                     tiempoEspera--;
                     Thread.Sleep(1000);
                     Console.Clear();
                 }
                 else
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine("                              PRESIONE ESPACIO PARA COMENZAR");
                     tiempoEspera--;
                     Thread.Sleep(1000);
                     Console.Clear();
@@ -92,7 +92,7 @@ namespace Knight_s_Quest
                 Console.WriteLine("");
 
 
-                Console.WriteLine("                              PRESIONE CUALQUIER TECLA PARA COMENZAR");
+                Console.WriteLine("                              PRESIONE ESPACIO PARA COMENZAR");
                 if (Detector() == true)
                 {
                     Console.WriteLine("Exito"); //aqui vamos directo a la logica del juego se cambia 
