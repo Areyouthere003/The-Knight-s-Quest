@@ -9,6 +9,9 @@ obj/
 # Common node modules locations
 /node_modules
 /wwwroot/node_modules
+/FileContentIndex
+/v17
+/DesignTimeBuild
 
 ### Windows ###
 # Windows thumbnail cache files
