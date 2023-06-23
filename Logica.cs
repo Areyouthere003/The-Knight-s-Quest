@@ -12,8 +12,11 @@ namespace Knight_s_Quest
         {
             int saludHeroe = 50, ataqueHeroe = 5, saludEnemigo = 1;
             int SaludOrco = 200, ataqueOrco = 1, defensaOrco = 2;
+            Historia historia = new Historia();
             Personajes variable1 = new Personajes();
             Enemigo variable2 = new Enemigo(SaludOrco, ataqueOrco, defensaOrco);
+            historia.Introduccion();
+            historia.PrimerJefe();
             Console.WriteLine("comienza la epica batalla del heroe contra el orco"); //aquí iría la lógica no la historia, la historia estará en otra clase;
             Console.WriteLine("Tus estadisticas");
             saludHeroe = variable1.RetornoHeroe();
