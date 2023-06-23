@@ -75,5 +75,37 @@ namespace Knight_s_Quest
             }
             Limpieza();
         }
+        public void ReyDemonio()
+        {
+            int vel = 100;
+            texto = "";
+            Console.WriteLine("Una vez eliminado los 4 jefes, se dirige a ver al rey demonio oscuro,\r\n encontrados frente a frente el caballero dice:\r\n       - ¡Págame lo mío HP! (hewlett Packard). Mi plata, ¿dónde está?\r\n El Rey Demonio responde:\r\n \t       - Parce ¿sabe qué?, me lo mecatee en cositas.\r\n Es cuando la decisiva ultra mega contra hiper batalla final full HD, Real no Fake empieza:");
+            for (int i = 0; i < texto.Length; i++)
+            {
+                Console.Write(texto[i]);
+                Thread.Sleep(vel);
+            }
+            Limpieza();
+        }
+        public void Derrota()
+        {
+            Console.WriteLine("Te han derrotado, sos severo malo");
+            Limpieza();
+        }
+        public void GanaBatalla()
+        {
+            Console.WriteLine("sos un capo, estás más cerca de recuperar lo que es tuyo");
+            Limpieza();
+        }
+        public void GanaBatallaFinal()
+        {
+            Console.WriteLine("¡Lo conseguiste!, demostraste que el plagio nunca ganará...\r\n pero viendo de cerca ese no era tu escudo de armas,\r\n ahí es cuando el caballero decide irse lentamente antes que lo culpen por ese reguero de cuerpos en el piso.\r\n \r\n \r\n FIN.");
+            Limpieza();
+        }
+        public void DerrotaBatallaFinal()
+        {
+            Console.WriteLine("nooo tas cagao, estuviste a punto de pasar el juego, \r\n ahora por malo te tocá volver a comenzar");
+            Limpieza();
+        }
     }
 }
