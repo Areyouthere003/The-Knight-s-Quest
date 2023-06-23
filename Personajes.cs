@@ -29,11 +29,9 @@ namespace Knight_s_Quest
     public class Enemigo:Personajes //Herencia de la clase personajes para los enemigos
     {
         private int ataque1, defensa1, hP1, healthPointLeft1, healthPointEnemy1; //se agregan nuevas variables para cambiar la asignación de las que vienen por defecto
-        public Enemigo(int healhtP, int atq, int def)  //Constructor parametrizado
+        public Enemigo(int healhtP)  //Constructor parametrizado
         {
             hP1 = healhtP;
-            ataque1 = atq;
-            defensa1 = def;
         }
         public void Orco(int daño)
         {

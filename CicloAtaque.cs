@@ -6,28 +6,18 @@ using System.Threading.Tasks;
 
 namespace Knight_s_Quest
 {
-    internal class Logica
+    public class CicloAtaque
     {
-        public static void Logica1()
+        private int estadisticaEnemigo;
+        bool valid; int opcion, condatq;
+        public void cicloAtaque(int saludHeroe, int SaludOrco)
         {
-            bool valid; int opcion, condatq;
-            int saludHeroe, ataqueHeroe = -5, estadisticaEnemigo;
-            int SaludOrco = 200, ataqueOrco = 1, defensaOrco = 2;
-            int saludLich = 250, ataqueLich = 3, defensaLich = 2;
-            int saludDarkKnight = 280, ataqueDK = 5 , defensaDK = 4;
-            int saludWizard = 300, ataqueWizard = 4, defensaWizard = 0;
-            int saludDarkDemonKing = 400, ataqueDDK = 6, defensaDDK = 6;
-            //historia.Introduccion();
-            //historia.PrimerJefe();
-            CicloAtaque ciclo = new CicloAtaque();
             Ataques ataques = new Ataques();
             Historia historia = new Historia();
             Personajes variable1 = new Personajes();
             Enemigo variable2 = new Enemigo(SaludOrco);
-            saludHeroe = variable1.RetornoHeroe();
-            estadisticaEnemigo = variable2.RetornoOrco();
-            ciclo.cicloAtaque(saludHeroe, SaludOrco);
-            /*while (variable1.RetornoHeroe() > 1 || variable2.RetornoOrco() > 1)
+
+            while (variable1.RetornoHeroe() > 1 || variable2.RetornoOrco() > 1)
             {
                 Console.WriteLine("");
                 Console.WriteLine("tu salud es: {0}", saludHeroe);
@@ -38,9 +28,17 @@ namespace Knight_s_Quest
                 {
                     Console.WriteLine("Escoja la carta (número)");
                     valid = int.TryParse(Console.ReadLine(), out opcion);
-                    if(opcion >0 && opcion <13)
+                    if (opcion > 0 && opcion < 13)
                     {
-                        valid= true;
+                        if(historia.Ver1() == opcion || historia.Ver2() == opcion || historia.Ver3() == opcion)
+                        {
+                            valid = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("no está esa carta");
+                            valid = false;
+                        }
                     }
                     else
                     {
@@ -88,7 +86,7 @@ namespace Knight_s_Quest
                         condatq = variable2.RetornoOrco();
                         Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
                         Console.ReadKey();
-                        break; 
+                        break;
                     case 5:
                         variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
                         variable1.Heroe(ataques.BendicionSagrada());
@@ -118,8 +116,8 @@ namespace Knight_s_Quest
                         Console.ReadKey();
                         break;
                     case 8:
-                        variable1.Heroe(ataques.AtqEnemigo());            
-                        saludHeroe = variable1.RetornoHeroe();            
+                        variable1.Heroe(ataques.AtqEnemigo());
+                        saludHeroe = variable1.RetornoHeroe();
                         Console.WriteLine("tu salud es: {0}", saludHeroe);
                         variable2.Orco(ataques.Veneno());
                         condatq = variable2.RetornoOrco();
@@ -128,7 +126,7 @@ namespace Knight_s_Quest
                         break;
                     case 9:
                         variable1.Heroe(ataques.AtqEnemigo());
-                        saludHeroe = variable1.RetornoHeroe(); 
+                        saludHeroe = variable1.RetornoHeroe();
                         Console.WriteLine("tu salud es: {0}", saludHeroe);
                         variable2.Orco(ataques.Daga());
                         condatq = variable2.RetornoOrco();
@@ -163,22 +161,8 @@ namespace Knight_s_Quest
                         Console.ReadKey();
                         break;
                 }
-                Console.ReadKey();
-            }*/
+            }
         }
-        public void estadisticas()
-        {
-            int ataque;
-            int defensa;
-            int HP;
-        }
-        /*public void AtaqueSagDolor()
-            {
-                Personajes heroe = new Personajes();
-                Enemigo enemigo = new Enemigo();
-                int dolor = Dolor();
-                int bendicion = BendicionSagrada();
-                heroe.Heroe(bendicion);
-            }*/
-    }    
+
+    }
 }

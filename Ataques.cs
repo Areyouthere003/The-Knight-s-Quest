@@ -26,25 +26,35 @@ namespace Knight_s_Quest
                     pilaAtaques.Push(numepre);
             }
         }
-       public void Atacar(int ataque)
+       public int AtqEnemigo()
         {
-            switch(ataque)
+            numepost = alea.Next(1, 12);
+            switch (numepost)
             {
                 case 1:
-                    Puño();
-                    break;
+                    return Puño();
                 case 2:
-                    Espadazo();
-                    break;
+                    return Espadazo();
                 case 3:
-                    Cargazo();
-                    break;
+                    return Cargazo();
                 case 4:
-                    Pocion();
-                    break;
+                    return Puño();
                 case 5:
-                    BendicionSagrada();
-                    break;
+                    return BendicionSagrada();
+                case 6:
+                    return MaestroEspadas();
+                case 7:
+                    return Cargazo();
+                case 8:
+                    return Veneno();
+                case 9:
+                    return Daga();
+                case 10:
+                    return Furia();
+                case 11:
+                    return GolpeBajo();
+                default:
+                    return HambrienTITO();
             }
         }
         public int Puño() //ataque simpl
@@ -82,9 +92,9 @@ namespace Knight_s_Quest
             int maestro = -15;
             return maestro;
         }
-        public int DefensaAbsoluta()
+        public int DefensaAbsoluta(int atq)
         {
-            int defensaAbsoluta = -15;
+            int defensaAbsoluta = atq + 15;
             return defensaAbsoluta;
         }
         public int Veneno()
@@ -108,13 +118,9 @@ namespace Knight_s_Quest
         {
             return -7;
         }
-        /*public void AtaqueSagDolor()
+        public int Pasivo()
         {
-            Personajes heroe = new Personajes();
-            Enemigo enemigo = new Enemigo();
-            int dolor = Dolor();
-            int bendicion = BendicionSagrada();
-            heroe.Heroe(bendicion);
-        }*/
+            return 0;
+        }
     }
 }

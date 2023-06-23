@@ -9,6 +9,7 @@ namespace Knight_s_Quest
     public class Historia
     {
         string texto;
+        int[] habilitados = new int[2];
         public void Limpieza() //sirve como un procedimiento para limpiar la pantalla entre cada punto de inflección de la historia.
         {
             Console.WriteLine("");
@@ -108,7 +109,21 @@ namespace Knight_s_Quest
             Console.WriteLine("nooo tas cagao, estuviste a punto de pasar el juego, \r\n ahora por malo te tocá volver a comenzar");
             Limpieza();
         }
-
+        public int Ver1()
+        {
+            int val1 = habilitados[0];
+            return val1;
+        }
+        public int Ver2()
+        {
+            int val2 = habilitados[1];
+            return val2;
+        }
+        public int Ver3()
+        {
+            int val3 = habilitados[2];
+            return val3;
+        }
 
         //Se coloca la baraja como procedimientos dentro de historia para no generar conflicto con los ataques, y para que no sea estatico dentro de lógica
         public void Baraja()
@@ -118,13 +133,14 @@ namespace Knight_s_Quest
             int numepre = 0, numepost;
             for (int i = 0; i < 3; i++)
             {
-                numepost = alea.Next(1, 12); ;
+                numepost = alea.Next(1, 12);
                 if (numepre == numepost)
                 {
                     i--;
                 }
                 else
                 {
+                    habilitados[i] = numepost;
                     numepre = numepost;
                     pilaAtaques.Push(numepost);
                 }
@@ -132,6 +148,7 @@ namespace Knight_s_Quest
             while (pilaAtaques.Count > 0)
             {
                 int muestra = pilaAtaques.Pop();
+
                 if (muestra == 1)
                 {
                     Puño();
