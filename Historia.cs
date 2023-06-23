@@ -9,7 +9,7 @@ namespace Knight_s_Quest
     public class Historia
     {
         string texto;
-        private void Limpieza() //sirve como un procedimiento para limpiar la pantalla entre cada punto de inflección de la historia.
+        public void Limpieza() //sirve como un procedimiento para limpiar la pantalla entre cada punto de inflección de la historia.
         {
             Console.WriteLine("");
             Console.WriteLine("");
@@ -107,6 +107,130 @@ namespace Knight_s_Quest
         {
             Console.WriteLine("nooo tas cagao, estuviste a punto de pasar el juego, \r\n ahora por malo te tocá volver a comenzar");
             Limpieza();
+        }
+
+
+        //Se coloca la baraja como procedimientos dentro de historia para no generar conflicto con los ataques, y para que no sea estatico dentro de lógica
+        public void Baraja()
+        {
+            Stack<int> pilaAtaques = new Stack<int>();
+            Random alea = new Random();
+            int numepre = 0, numepost;
+            for (int i = 0; i < 3; i++)
+            {
+                numepost = alea.Next(1, 12); ;
+                if (numepre == numepost)
+                {
+                    i--;
+                }
+                else
+                {
+                    numepre = numepost;
+                    pilaAtaques.Push(numepost);
+                }
+            }
+            while (pilaAtaques.Count > 0)
+            {
+                int muestra = pilaAtaques.Pop();
+                if (muestra == 1)
+                {
+                    Puño();
+                }
+                else if (muestra == 2)
+                {
+                    Espadazo();
+                }
+                else if (muestra == 3)
+                {
+                    Cargazo();
+                }
+                else if (muestra == 4)
+                {
+                    Pocion();
+                }
+                else if (muestra == 5)
+                {
+                    BendicionSagrada();
+                }
+                else if (muestra == 6)
+                {
+                    MaestroEspadas();
+                }
+                else if (muestra == 7)
+                {
+                    DefensaAbsoluta();
+                }
+                else if (muestra == 8)
+                {
+                    Veneno();
+                }
+                else if (muestra == 9)
+                {
+                    Daga();
+                }
+                else if (muestra == 10)
+                {
+                    Furia();
+                }
+                else if (muestra == 11)
+                {
+                    GolpeBajo();
+                }
+                else
+                {
+                    HambrienTITO();
+                }
+            }
+        }
+
+        // los siguientes procedimientos son para mostrar en pantalla la descripción del ataque o habilidad.
+        public void Puño() //detalle de los ataques
+        {
+            Console.WriteLine("1) Puño: Da un patetico puño de. 5 atq");
+        }
+        public void Espadazo()
+        {
+            Console.WriteLine("2) Espadazo: 10 atq");
+        }
+        public void Cargazo()
+        {
+            Console.WriteLine("3) Cargazo: embiste tu enemigo. 8 atq");
+        }
+        public void Pocion()
+        {
+            Console.WriteLine("4) Poción: te curas. +5 de sangre");
+        }
+        public void BendicionSagrada()
+        {
+            Console.WriteLine("5) Bendición: te curas. +15 de sangre y causas dolor 5 atq ");
+        }
+        public void MaestroEspadas()
+        {
+            Console.WriteLine("6) Maestro de Espadas: ataque hecho por un profesional. +15 de atq");
+        }
+        public void DefensaAbsoluta()
+        {
+            Console.WriteLine("7) Defensa Absoluta. defensa +15");
+        }
+        public void Veneno()
+        {
+            Console.WriteLine("8) Veneno. daño progresivo por tres turnos -5");
+        }
+        public void Daga()
+        {
+            Console.WriteLine("9) Daga. +7 atq");
+        }
+        public void Furia()
+        {
+            Console.WriteLine("10) Furia. reduce la defensa -8");
+        }
+        public void GolpeBajo()
+        {
+            Console.WriteLine("11) Golpe en los bajos, que dolor de hue.. . +6 atq");
+        }
+        public void HambrienTITO()
+        {
+            Console.WriteLine("12) el TITO Mordelon: Muerde al rival, solo por que si. +7 atq");
         }
     }
 }
