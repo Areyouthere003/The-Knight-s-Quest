@@ -18,8 +18,8 @@ namespace Knight_s_Quest
             int saludWizard = 300, ataqueWizard = 4, defensaWizard = 0;
             int saludDarkDemonKing = 450, ataqueDDK = 6, defensaDDK = 6;
             Historia historia = new Historia();
-            //historia.Introduccion();
-            //historia.PrimerJefe();
+            historia.Introduccion();
+            historia.PrimerJefe();
             CicloAtaque ciclo = new CicloAtaque();
             Ataques ataques = new Ataques();
             Personajes variable1 = new Personajes();
