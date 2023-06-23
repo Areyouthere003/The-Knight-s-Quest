@@ -6,33 +6,42 @@ using System.Threading.Tasks;
 
 namespace Knight_s_Quest
 {
-    internal class Personajes
+    public class Personajes
     {
-        public class Enemigos
-        {
-            private int ataque;
-            private int defensa;
-            private int HP;
+        private int ataque, defensa, hP, healthPointLeft, healthPointEnemy;
 
-            public void VidaOrco()
-            {
-                HP = 100;
-                ataque = 3;
-                defensa = 2;
-            }
-        }
-        public class Heroe
+        //Constructor por defecto, se coloca como nombre el mismo nombre de la clase como por defecto
+        public Personajes()
         {
-            private int ataque;
-            private int defensa;
-            private int HP;
-            public void Heroe1(int hp, int ataque, int defensa)
-            {
-                hp = 101;
-                ataque = 4;
-                defensa = 3;
-                Console.WriteLine("{0}, {1}, {2}", hp, ataque, defensa);
-            }
+            hP = 100;
+            ataque = 3;
+            defensa = 2;
+        }
+        public void Heroe(int daño)
+        {
+            hP -= daño;
+        }
+        public int RetornoHeroe()
+        {
+            return hP;
+        }
+    }
+    public class Enemigo:Personajes
+    {
+        private int ataque1, defensa1, hP1, healthPointLeft1, healthPointEnemy1;
+        public Enemigo(int healhtP, int atq, int def) 
+        {
+            hP1 = healhtP;
+            ataque1 = atq;
+            defensa1 = def;
+        }
+        public void Orco(int daño)
+        {
+            hP1 -= daño;
+        }
+        public int RetornoOrco()
+        {
+            return hP1;
         }
     }
 }
