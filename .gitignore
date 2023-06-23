@@ -13,6 +13,7 @@ obj/
 /.vs/ProjectEvaluation
 /.vs/Knight's Quest/DesignTimeBuild
 /.vs/Knight's Quest/v17
+.suo
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
