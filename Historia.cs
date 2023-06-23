@@ -9,7 +9,7 @@ namespace Knight_s_Quest
     public class Historia
     {
         string texto;
-        int[] habilitados = new int[2];
+        int[] habilitados = new int[3];
         public void Limpieza() //sirve como un procedimiento para limpiar la pantalla entre cada punto de inflección de la historia.
         {
             Console.WriteLine("");

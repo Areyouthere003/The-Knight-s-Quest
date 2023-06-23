@@ -13,7 +13,7 @@ namespace Knight_s_Quest
         //Constructor por defecto, se coloca como nombre el mismo nombre de la clase como por defecto para el héroe
         public Personajes()
         {
-            hP = 100;
+            hP = 30;
             ataque = 3;
             defensa = 2;
         }

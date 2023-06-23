@@ -12,21 +12,29 @@ namespace Knight_s_Quest
         {
             bool valid; int opcion, condatq;
             int saludHeroe, ataqueHeroe = -5, estadisticaEnemigo;
-            int SaludOrco = 200, ataqueOrco = 1, defensaOrco = 2;
+            int SaludOrco = 100, ataqueOrco = 1, defensaOrco = 2;
             int saludLich = 250, ataqueLich = 3, defensaLich = 2;
             int saludDarkKnight = 280, ataqueDK = 5 , defensaDK = 4;
             int saludWizard = 300, ataqueWizard = 4, defensaWizard = 0;
-            int saludDarkDemonKing = 400, ataqueDDK = 6, defensaDDK = 6;
+            int saludDarkDemonKing = 450, ataqueDDK = 6, defensaDDK = 6;
+            Historia historia = new Historia();
             //historia.Introduccion();
             //historia.PrimerJefe();
             CicloAtaque ciclo = new CicloAtaque();
             Ataques ataques = new Ataques();
-            Historia historia = new Historia();
             Personajes variable1 = new Personajes();
             Enemigo variable2 = new Enemigo(SaludOrco);
             saludHeroe = variable1.RetornoHeroe();
-            estadisticaEnemigo = variable2.RetornoOrco();
+            //estadisticaEnemigo = variable2.RetornoOrco();
             ciclo.cicloAtaque(saludHeroe, SaludOrco);
+            historia.GanaBatalla();
+            ciclo.cicloAtaque(saludHeroe, saludLich);
+            historia.GanaBatalla();
+            ciclo.cicloAtaque(saludHeroe, saludDarkKnight);
+            historia.GanaBatalla();
+            ciclo.cicloAtaque(saludHeroe, saludDarkDemonKing);
+            historia.GanaBatallaFinal();
+
             /*while (variable1.RetornoHeroe() > 1 || variable2.RetornoOrco() > 1)
             {
                 Console.WriteLine("");
@@ -166,13 +174,13 @@ namespace Knight_s_Quest
                 Console.ReadKey();
             }*/
         }
-        public void estadisticas()
+        /*public void estadisticas()
         {
             int ataque;
             int defensa;
             int HP;
         }
-        /*public void AtaqueSagDolor()
+        public void AtaqueSagDolor()
             {
                 Personajes heroe = new Personajes();
                 Enemigo enemigo = new Enemigo();
