@@ -10,183 +10,34 @@ namespace Knight_s_Quest
     {
         public static void Logica1()
         {
-            bool valid; int opcion, condatq;
-            int saludHeroe, ataqueHeroe = -5, estadisticaEnemigo;
-            int SaludOrco = 100, ataqueOrco = 1, defensaOrco = 2;
-            int saludLich = 250, ataqueLich = 3, defensaLich = 2;
-            int saludDarkKnight = 280, ataqueDK = 5 , defensaDK = 4;
-            int saludWizard = 300, ataqueWizard = 4, defensaWizard = 0;
-            int saludDarkDemonKing = 450, ataqueDDK = 6, defensaDDK = 6;
+            /* bool valid; Borar códigos que no se usan.
+               int opcion, condatq; estadisticaEnemigo */
+            int saludHeroe, SaludOrco = 100, saludLich = 150, saludDarkKnight = 180, saludWizard = 200, saludDarkDemonKing = 450;
+            //Colocar todas las variables de 1 tipo sobre la misma linea de código.
+            Personajes variable1 = new Personajes();
             Historia historia = new Historia();
-            historia.Introduccion();
-            historia.PrimerJefe();
             CicloAtaque ciclo = new CicloAtaque();
             Ataques ataques = new Ataques();
-            Personajes variable1 = new Personajes();
             Enemigo variable2 = new Enemigo(SaludOrco);
+                                                        //Genero espacio para dejar una mejor lectura del código.
+                                                        //Acomodo toda la declaración de variables al principio del código.
+            historia.Introduccion();
+            historia.PrimerJefe();
             saludHeroe = variable1.RetornoHeroe();
-            //estadisticaEnemigo = variable2.RetornoOrco();
-            ciclo.cicloAtaque(saludHeroe, SaludOrco);
+            ciclo.CicloAtaques(saludHeroe, SaludOrco);
             historia.GanaBatalla();
-            ciclo.cicloAtaque(saludHeroe, saludLich);
+            historia.SegundoJefe();
+            ciclo.CicloAtaques(saludHeroe, saludLich);
             historia.GanaBatalla();
-            ciclo.cicloAtaque(saludHeroe, saludDarkKnight);
+            historia.TercerJefe();
+            ciclo.CicloAtaques(saludHeroe, saludDarkKnight);
             historia.GanaBatalla();
-            ciclo.cicloAtaque(saludHeroe, saludDarkDemonKing);
+            historia.CuartoJefe();
+            ciclo.CicloAtaques(saludHeroe, saludWizard);
+            historia.GanaBatalla();
+            historia.ReyDemonio();
+            ciclo.CicloAtaques(saludHeroe, saludDarkDemonKing);
             historia.GanaBatallaFinal();
-
-            /*while (variable1.RetornoHeroe() > 1 || variable2.RetornoOrco() > 1)
-            {
-                Console.WriteLine("");
-                Console.WriteLine("tu salud es: {0}", saludHeroe);
-                Console.WriteLine("La salud del enemigo es: {0}", estadisticaEnemigo);
-                Console.WriteLine("");
-                historia.Baraja();
-                do
-                {
-                    Console.WriteLine("Escoja la carta (número)");
-                    valid = int.TryParse(Console.ReadLine(), out opcion);
-                    if(opcion >0 && opcion <13)
-                    {
-                        valid= true;
-                    }
-                    else
-                    {
-                        valid = false;
-                        Console.WriteLine("numero incorrecto, eliga un número de la lista");
-                        Console.WriteLine("");
-                    }
-                }
-                while (!valid);
-                switch (opcion)
-                {
-                    case 1:
-                        variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Puño());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 2:
-                        variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Espadazo());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 3:
-                        variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Cargazo());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 4:
-                        variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Pasivo());
-                        variable1.Heroe(ataques.Pocion());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break; 
-                    case 5:
-                        variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
-                        variable1.Heroe(ataques.BendicionSagrada());
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Dolor());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 6:
-                        variable1.Heroe(ataques.AtqEnemigo());                    //Asigna el ataque del enemigo
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.MaestroEspadas());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 7:
-                        variable1.Heroe(ataques.DefensaAbsoluta(ataques.AtqEnemigo()));
-                        saludHeroe = variable1.RetornoHeroe();              //devuelve el valor restante
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Cargazo());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 8:
-                        variable1.Heroe(ataques.AtqEnemigo());            
-                        saludHeroe = variable1.RetornoHeroe();            
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Veneno());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 9:
-                        variable1.Heroe(ataques.AtqEnemigo());
-                        saludHeroe = variable1.RetornoHeroe(); 
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Daga());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 10:
-                        variable1.Heroe(ataques.AtqEnemigo());
-                        saludHeroe = variable1.RetornoHeroe();
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.Furia());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    case 11:
-                        variable1.Heroe(ataques.AtqEnemigo());
-                        saludHeroe = variable1.RetornoHeroe();
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.GolpeBajo());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                    default:
-                        variable1.Heroe(ataques.AtqEnemigo());
-                        saludHeroe = variable1.RetornoHeroe();
-                        Console.WriteLine("tu salud es: {0}", saludHeroe);
-                        variable2.Orco(ataques.HambrienTITO());
-                        condatq = variable2.RetornoOrco();
-                        Console.WriteLine("La salud de tu enemigo es es: {0}", condatq);
-                        Console.ReadKey();
-                        break;
-                }
-                Console.ReadKey();
-            }*/
         }
-        /*public void estadisticas()
-        {
-            int ataque;
-            int defensa;
-            int HP;
-        }
-        public void AtaqueSagDolor()
-            {
-                Personajes heroe = new Personajes();
-                Enemigo enemigo = new Enemigo();
-                int dolor = Dolor();
-                int bendicion = BendicionSagrada();
-                heroe.Heroe(bendicion);
-            }*/
     }    
 }

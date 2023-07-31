@@ -13,17 +13,21 @@ namespace Knight_s_Quest
             int vel = 100;
             string texto = "█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀\r\n";
             string texto2 = "█▄▄ █▄█ █▀█ █▄▀ █ █░▀█ █▄█ ▄ ▄ ▄";
+
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.Write("                       ");
+
             for (int i = 0; i < texto.Length; i++) 
             {
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
+
             Console.Write("                       ");
+
             for (int i = 0; i < texto2.Length; i++)
             {
                 Console.Write(texto2[i]);

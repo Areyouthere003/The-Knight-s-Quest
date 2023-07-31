@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Knight_s_Quest
 {
-    internal class menu
+    internal class Menu //Se cambió por PascalCase orignalmente menu
     {
         static bool Detector()
         {
             ConsoleKeyInfo teclas = new ConsoleKeyInfo();
             bool valor;
             char caracter;
+                                            //Agregó espacios para una mejor lectura del código.
             teclas = Console.ReadKey();
             caracter = teclas.KeyChar;
+
             if (char.IsWhiteSpace(caracter))
             {
                 valor = true;
@@ -24,9 +26,11 @@ namespace Knight_s_Quest
 
             return valor;
         }
+
         public static void Menucito()
         {
             int tiempoEspera = 10;
+
             while (tiempoEspera > 1)
             {
                 Console.WriteLine("         ****************************************************************************************");
@@ -50,6 +54,7 @@ namespace Knight_s_Quest
                 Console.WriteLine("");
 
                 int modulo = tiempoEspera % 2;
+
                 if (modulo == 0)
                 {
                     Console.WriteLine("");
@@ -89,6 +94,7 @@ namespace Knight_s_Quest
 
 
                 Console.WriteLine("                              PRESIONE ESPACIO PARA COMENZAR");
+
                 if (Detector() == true)
                 {
                     Console.Clear();
