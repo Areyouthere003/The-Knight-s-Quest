@@ -8,7 +8,7 @@ namespace Knight_s_Quest
 {
     internal class Menu //Se cambió por PascalCase orignalmente menu
     {
-        static bool Detector()
+        static bool detector()
         {
             ConsoleKeyInfo teclas = new ConsoleKeyInfo();
             bool valor;
@@ -27,7 +27,7 @@ namespace Knight_s_Quest
             return valor;
         }
 
-        public static void Menucito()
+        public static void menucito()
         {
             int tiempoEspera = 10;
 
@@ -95,10 +95,10 @@ namespace Knight_s_Quest
 
                 Console.WriteLine("                              PRESIONE ESPACIO PARA COMENZAR");
 
-                if (Detector() == true)
+                if (detector() == true)
                 {
                     Console.Clear();
-                    Loading.Carga();
+                    Loading.carga();
                     Console.Clear();
                     Logica.Logica1();   //aqui vamos directo a la logica del juego se cambia 
                                          //las variable de estas lineas por la llamada al juego
@@ -106,7 +106,7 @@ namespace Knight_s_Quest
                 else
                 {
                     Console.Clear();
-                    Menucito();
+                    menucito();
                 }
             }
         }

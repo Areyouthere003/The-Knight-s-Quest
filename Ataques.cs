@@ -27,40 +27,40 @@ namespace Knight_s_Quest
             }
         }
 
-       public int AtqEnemigo()
+       public int atqEnemigo()
         {
             numePost = alea.Next(1, 12);
 
             switch (numePost)
             {
                 case 1:
-                    return Puño();
+                    return puño();
                 case 2:
-                    return Espadazo();
+                    return espadazo();
                 case 3:
-                    return Cargazo();
+                    return cargazo();
                 case 4:
-                    return Puño();
+                    return puño();
                 case 5:
-                    return BendicionSagrada();
+                    return bendicionSagrada();
                 case 6:
-                    return MaestroEspadas();
+                    return maestroEspadas();
                 case 7:
-                    return Cargazo();
+                    return cargazo();
                 case 8:
-                    return Veneno();
+                    return veneno();
                 case 9:
-                    return Daga();
+                    return daga();
                 case 10:
-                    return Furia();
+                    return furia();
                 case 11:
-                    return GolpeBajo();
+                    return golpeBajo();
                 default:
-                    return HambrienTITO();
+                    return hambrienTito();
             }
         }
 
-        public string TipoAtaqueEnemigo()
+        public string tipoAtaqueEnemigo()
         {
             switch (numePost)
             {
@@ -91,81 +91,81 @@ namespace Knight_s_Quest
             }
         }
 
-        public int Puño() //ataque simpl
+        public int puño() //ataque simpl
         {
             int puño = -5;
             return puño;
         }
 
-        public int Espadazo() //ataque con arma
+        public int espadazo() //ataque con arma
         {
             int espadazo = -10;
             return espadazo;
         }
 
-        public int Cargazo()
+        public int cargazo()
         {
             int cargazo = -8;
             return cargazo;
         }
 
-        public int Pocion()
+        public int pocion()
         {
             int pocion = 5;
             return pocion;
         }
 
-        public int BendicionSagrada()
+        public int bendicionSagrada()
         {
             int bendicion = +15;
             return bendicion;
         }
 
-        public int Dolor()
+        public int dolor()
         {
             int dolor = -5;
             return dolor;
         }
 
-        public int MaestroEspadas()
+        public int maestroEspadas()
         {
             int maestro = -15;
             return maestro;
         }
 
-        public int DefensaAbsoluta(int atq)
+        public int defensaAbsoluta(int atq)
         {
             int defensaAbsoluta = atq + 15;
             return defensaAbsoluta;
         }
 
-        public int Veneno()
+        public int veneno()
         {
             int veneno = -5;
             return veneno;
         }
 
-        public int Daga()
+        public int daga()
         {
             return -7;
         }
 
-        public int Furia()
+        public int furia()
         {
             return -8;
         }
         
-        public int GolpeBajo()
+        public int golpeBajo()
         {
             return -6;
         }
         
-        public int HambrienTITO()
+        public int hambrienTito()
         {
             return -7;
         }
         
-        public int Pasivo()
+        public int pasivo()
         {
             return 0;
         }

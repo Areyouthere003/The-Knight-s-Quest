@@ -11,7 +11,7 @@ namespace Knight_s_Quest
         private string texto =(string.Empty); //colocar una variable de string vacia para no arrojar Null
         private int[] habilitados = new int[3];
 
-        public void Limpieza() //sirve como un procedimiento para limpiar la pantalla entre cada punto de inflección de la historia.
+        public void limpieza() //sirve como un procedimiento para limpiar la pantalla entre cada punto de inflección de la historia.
         {
             Console.WriteLine("");
             Console.WriteLine("");
@@ -20,7 +20,7 @@ namespace Knight_s_Quest
             Console.Clear();
         }
 
-        public void Introduccion()
+        public void introduccion()
         {
             int vel = 50;
             texto = " Esta es la historia de un caballero que salió de su casa puto por que le habían\r\n " +
@@ -32,10 +32,10 @@ namespace Knight_s_Quest
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
-            Limpieza();
+            limpieza();
         }
 
-        public void PrimerJefe()
+        public void primerJefe()
         {
             int vel = 50;
             texto = " Al caminar hacia el castillo se topa con el primer jefe de área, un orco malhumorado.\r\n " + 
@@ -51,10 +51,10 @@ namespace Knight_s_Quest
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
-            Limpieza();
+            limpieza();
         }
 
-        public void SegundoJefe()
+        public void segundoJefe()
         {
             int vel = 50;
             texto = "Derrotado el primer jefe, nuestro vengativo caballero se dirige nuevamente al \r\n castillo " +
@@ -70,10 +70,10 @@ namespace Knight_s_Quest
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
-            Limpieza();
+            limpieza();
         }
 
-        public void TercerJefe()
+        public void tercerJefe()
         {
             int vel = 50;
             texto = "Tras derrotar al segundo jefe, nuestro tierno y nada violento héroe sigue su\r\n búsqueda para " +
@@ -89,10 +89,10 @@ namespace Knight_s_Quest
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
-            Limpieza();
+            limpieza();
         }
 
-        public void CuartoJefe()
+        public void cuartoJefe()
         {
             int vel = 50;
             texto = "Una vez derrotado el tercer jefe, nuestro amado caballero sigue su camino para ver\r\n al " +
@@ -111,10 +111,10 @@ namespace Knight_s_Quest
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
-            Limpieza();
+            limpieza();
         }
 
-        public void ReyDemonio()
+        public void reyDemonio()
         {
             int vel = 50;
             texto = "Una vez eliminado los 4 jefes, se dirige a ver al rey demonio oscuro,\r\n encontrados " +
@@ -129,40 +129,40 @@ namespace Knight_s_Quest
                 Console.Write(texto[i]);
                 Thread.Sleep(vel);
             }
-            Limpieza();
+            limpieza();
         }
 
-        public void Derrota()
+        public void derrota()
         {
             Console.WriteLine("Te han derrotado, sos severo malo");
-            Limpieza();
+            limpieza();
         }
 
-        public void GanaBatalla()
+        public void ganaBatalla()
         {
             Console.WriteLine("sos un capo, estás más cerca de recuperar lo que es tuyo");
-            Limpieza();
+            limpieza();
         }
 
-        public void GanaBatallaFinal()
+        public void ganaBatallaFinal()
         {
             Console.WriteLine("¡Lo conseguiste!, demostraste que el plagio nunca ganará...\r\n pero viendo de cerca ese no era tu escudo de armas,\r\n ahí es cuando el caballero decide irse lentamente antes que lo culpen por ese reguero de cuerpos en el piso.\r\n \r\n \r\n FIN.");
-            Limpieza();
+            limpieza();
         }
 
-        public void DerrotaBatallaFinal()
+        public void derrotaBatallaFinal()
         {
             Console.WriteLine("nooo tas cagao, estuviste a punto de pasar el juego, \r\n ahora por malo te tocá volver a comenzar");
-            Limpieza();
+            limpieza();
         }
 
-        public int Ver1()
+        public int verrificacion1()
         {
             int val1 = habilitados[0];
             return val1;
         }
 
-        public int Ver2()
+        public int verificacion2()
         {
             int val2 = habilitados[1];
             return val2;
@@ -179,7 +179,7 @@ namespace Knight_s_Quest
         para no generar conflicto con los ataques y para que no sea estatico dentro de lógica 
         */
 
-        public void Baraja()
+        public void baraja()
         {
             Stack<int> pilaAtaques = new Stack<int>();
             Random alea = new Random();
@@ -207,112 +207,112 @@ namespace Knight_s_Quest
 
                 if (muestra == 1)
                 {
-                    Puño();
+                    puño();
                 }
                 else if (muestra == 2)
                 {
-                    Espadazo();
+                    espadazo();
                 }
                 else if (muestra == 3)
                 {
-                    Cargazo();
+                    cargazo();
                 }
                 else if (muestra == 4)
                 {
-                    Pocion();
+                    pocion();
                 }
                 else if (muestra == 5)
                 {
-                    BendicionSagrada();
+                    bendicionSagrada();
                 }
                 else if (muestra == 6)
                 {
-                    MaestroEspadas();
+                    maestroEspadas();
                 }
                 else if (muestra == 7)
                 {
-                    DefensaAbsoluta();
+                    defensaAbsoluta();
                 }
                 else if (muestra == 8)
                 {
-                    Veneno();
+                    veneno();
                 }
                 else if (muestra == 9)
                 {
-                    Daga();
+                    daga();
                 }
                 else if (muestra == 10)
                 {
-                    Furia();
+                    furia();
                 }
                 else if (muestra == 11)
                 {
-                    GolpeBajo();
+                    golpeBajo();
                 }
                 else
                 {
-                    HambrienTITO();
+                    HambrienTito();
                 }
             }
         }
 
         // los siguientes procedimientos son para mostrar en pantalla la descripción del ataque o habilidad.
-        public void Puño() //detalle de los ataques
+        public void puño() //detalle de los ataques
         {
             Console.WriteLine("1) Puño: Da un patetico puño de. 5 atq");
         }
 
-        public void Espadazo()
+        public void espadazo()
         {
             Console.WriteLine("2) Espadazo: 10 atq");
         }
 
-        public void Cargazo()
+        public void cargazo()
         {
             Console.WriteLine("3) Cargazo: embiste tu enemigo. 8 atq");
         }
         
-        public void Pocion()
+        public void pocion()
         {
             Console.WriteLine("4) Poción: te curas. +5 de sangre");
         }
         
-        public void BendicionSagrada()
+        public void bendicionSagrada()
         {
             Console.WriteLine("5) Bendición: te curas. +15 de sangre y causas dolor 5 atq ");
         }
         
-        public void MaestroEspadas()
+        public void maestroEspadas()
         {
             Console.WriteLine("6) Maestro de Espadas: ataque hecho por un profesional. +15 de atq");
         }
         
-        public void DefensaAbsoluta()
+        public void defensaAbsoluta()
         {
             Console.WriteLine("7) Defensa Absoluta. defensa +15");
         }
         
-        public void Veneno()
+        public void veneno()
         {
             Console.WriteLine("8) Veneno. daño progresivo por tres turnos -5");
         }
         
-        public void Daga()
+        public void daga()
         {
             Console.WriteLine("9) Daga. +7 atq");
         }
         
-        public void Furia()
+        public void furia()
         {
             Console.WriteLine("10) Furia. reduce la defensa -8");
         }
         
-        public void GolpeBajo()
+        public void golpeBajo()
         {
             Console.WriteLine("11) Golpe en los bajos, que dolor de hue.. . +6 atq");
         }
                                                     //Colocamos espacios para dar mejor lectura al código.
-        public void HambrienTITO()
+        public void HambrienTito()
         {
             Console.WriteLine("12) el TITO Mordelon: Muerde al rival, solo por que si. +7 atq");
         }

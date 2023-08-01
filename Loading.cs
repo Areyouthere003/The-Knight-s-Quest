@@ -8,7 +8,7 @@ namespace Knight_s_Quest
 {
     public class Loading
     {
-        public static void Carga()
+        public static void carga()
         {
             int vel = 100;
             string texto = "█░░ █▀█ ▄▀█ █▀▄ █ █▄░█ █▀▀\r\n";

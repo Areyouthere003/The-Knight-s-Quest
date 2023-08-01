@@ -9,7 +9,7 @@ namespace Knight_s_Quest
         static void Main(string[] args)
         {
             Console.SetWindowSize(120, 40);
-            Menu.Menucito();
+            Menu.menucito();
         }    
     }
 }
